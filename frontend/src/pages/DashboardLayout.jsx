@@ -80,7 +80,7 @@ export default function DashboardLayout() {
             <Shield size={16} className="text-cyan-300" />
           </div>
           <div>
-            <div className="font-display text-[15px] leading-none">MemoryOS</div>
+            <div className="font-display text-[15px] leading-none">RuntimeOS</div>
             <div className="text-[10px] text-neutral-500 font-mono-plex mt-1">
               runtime.governance
             </div>

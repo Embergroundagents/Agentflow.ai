@@ -101,7 +101,7 @@ export default function ApiKeys() {
       {items.length === 0 ? (
         <EmptyState
           title="No API keys yet"
-          subtitle="Create one to authenticate your SDK integrations with MemoryOS."
+          subtitle="Create one to authenticate your SDK integrations with RuntimeOS."
         />
       ) : (
         <div className="surface rounded-xl overflow-hidden">

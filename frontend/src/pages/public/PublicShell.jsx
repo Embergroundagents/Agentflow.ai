@@ -22,7 +22,7 @@ export function PublicHeader() {
             <Shield size={16} className="text-cyan-300" />
           </div>
           <div>
-            <div className="font-display text-[15px] leading-none">MemoryOS</div>
+            <div className="font-display text-[15px] leading-none">RuntimeOS</div>
             <div className="text-[10px] text-neutral-500 font-mono-plex mt-1">
               runtime.governance
             </div>
@@ -245,7 +245,7 @@ export function PublicFooter() {
               <Shield size={18} className="text-cyan-300" />
             </div>
             <div>
-              <div className="font-display text-[16px]">MemoryOS</div>
+              <div className="font-display text-[16px]">RuntimeOS</div>
               <div className="text-[10px] text-neutral-500 font-mono-plex -mt-0.5">
                 runtime.governance
               </div>
@@ -323,7 +323,7 @@ export function PublicFooter() {
               data-testid="footer-social-github"
               className="inline-flex items-center gap-2 font-mono-plex text-cyan-300 text-[15px] hover:underline decoration-cyan-500/40 underline-offset-4 whitespace-nowrap"
             >
-              <Github size={14} /> c0ntr1butr/MemoryOS
+              <Github size={14} /> Embergroundagents/Agentflow.ai
             </a>
           </div>
         </div>
@@ -334,7 +334,7 @@ export function PublicFooter() {
         <div className="max-w-[1400px] mx-auto px-6 py-6 flex flex-col md:flex-row items-center justify-between gap-3">
           <div className="text-neutral-600 text-xs font-mono-plex flex items-center gap-2">
             <MapPin size={12} className="text-cyan-300/70" />
-            © 2026 MemoryOS · zero-trust runtime for autonomous AI
+            © 2026 RuntimeOS · zero-trust runtime for autonomous AI
           </div>
           <div className="text-neutral-600 text-xs font-mono-plex flex flex-wrap items-center gap-x-4 gap-y-2 max-w-full">
             <a

@@ -59,7 +59,7 @@ export default function Connectors() {
       <PageHeader
         eyebrow="Integrations"
         title="Enterprise connectors"
-        subtitle="Register the data planes MemoryOS sits in front of — every agent action to these targets is evaluated at runtime."
+        subtitle="Register the data planes RuntimeOS sits in front of — every agent action to these targets is evaluated at runtime."
         testid="connectors-header"
         right={
           <button
@@ -93,7 +93,7 @@ export default function Connectors() {
       {items.length === 0 ? (
         <EmptyState
           title="No connectors yet"
-          subtitle="Register the enterprise systems your agents reach through — MemoryOS becomes the enforcement layer."
+          subtitle="Register the enterprise systems your agents reach through — RuntimeOS becomes the enforcement layer."
         />
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">

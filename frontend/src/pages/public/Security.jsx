@@ -18,11 +18,11 @@ const CONTROLS = [
 
 const THREATS = [
   ["Prompt injection tricking an agent into exfiltrating data",
-   "MemoryOS evaluates every tool call after the LLM produces it. Even if the prompt injection convinces the model, the runtime blocks the exfiltration."],
+   "RuntimeOS evaluates every tool call after the LLM produces it. Even if the prompt injection convinces the model, the runtime blocks the exfiltration."],
   ["Compromised agent credential",
    "API keys are scoped to a role (viewer/editor/admin) and to policy effects. A leaked key cannot bypass policies or reach data outside its scope."],
   ["Over-permissioned service account",
-   "The runtime is the least-privilege enforcement layer: agents get broad IAM, MemoryOS narrows every call to what policy allows. Least-privilege by policy, not by IAM sprawl."],
+   "The runtime is the least-privilege enforcement layer: agents get broad IAM, RuntimeOS narrows every call to what policy allows. Least-privilege by policy, not by IAM sprawl."],
   ["Silent data drift or PII leakage",
    "The `modify` effect rewrites payloads before they reach downstream systems. Every redaction is logged with the exact redacted fields."],
   ["Unauthorized deploys / destructive ops",
@@ -47,7 +47,7 @@ export default function Security() {
           Built to sit between the LLM and everything you care about.
         </h1>
         <p className="text-neutral-400 text-lg mt-5 leading-relaxed max-w-3xl">
-          MemoryOS is the runtime enforcement point. If it doesn't earn the trust of your
+          RuntimeOS is the runtime enforcement point. If it doesn't earn the trust of your
           security team, the rest is theater. This page is the plain-English version of the
           security posture; the full whitepaper (PDF) is available on request.
         </p>
@@ -107,7 +107,7 @@ export default function Security() {
             <AlertTriangle size={12} className="text-amber-300" /> threat model
           </div>
           <h2 className="font-display text-3xl tracking-tight">
-            What MemoryOS is designed to defeat.
+            What RuntimeOS is designed to defeat.
           </h2>
           <div className="mt-8 space-y-3">
             {THREATS.map(([t, m]) => (
@@ -131,7 +131,7 @@ export default function Security() {
           deployment
         </div>
         <h2 className="font-display text-3xl tracking-tight">
-          Where MemoryOS lives, so you can prove it never phones home.
+          Where RuntimeOS lives, so you can prove it never phones home.
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
           {[
@@ -160,12 +160,12 @@ export default function Security() {
           <div className="surface rounded-2xl p-8">
             <ol className="space-y-4 text-sm">
               {[
-                ["Agent → MemoryOS", "TLS 1.3 · Authorization: Bearer · resource · action · purpose · payload · context."],
-                ["MemoryOS → policy engine", "In-process. No egress. Policies pre-indexed by priority."],
-                ["MemoryOS → MongoDB", "Same VPC. AES-256 at rest. Insert is the decision + trace + client-IP + user-agent."],
-                ["MemoryOS → audit stream", "Structured JSON line to stdout — collected by your Datadog/Splunk/CloudWatch agent."],
-                ["MemoryOS → agent", "Response with effect, effective payload, risk score, and evaluation trace."],
-                ["MemoryOS → webhook (optional)", "Only on `block` / `escalate` events, only to URLs you configured, retried with backoff."],
+                ["Agent → RuntimeOS", "TLS 1.3 · Authorization: Bearer · resource · action · purpose · payload · context."],
+                ["RuntimeOS → policy engine", "In-process. No egress. Policies pre-indexed by priority."],
+                ["RuntimeOS → MongoDB", "Same VPC. AES-256 at rest. Insert is the decision + trace + client-IP + user-agent."],
+                ["RuntimeOS → audit stream", "Structured JSON line to stdout — collected by your Datadog/Splunk/CloudWatch agent."],
+                ["RuntimeOS → agent", "Response with effect, effective payload, risk score, and evaluation trace."],
+                ["RuntimeOS → webhook (optional)", "Only on `block` / `escalate` events, only to URLs you configured, retried with backoff."],
               ].map(([step, detail], i) => (
                 <li key={step} className="flex items-start gap-4">
                   <div className="w-7 h-7 rounded-md border hairline flex items-center justify-center text-[11px] font-mono-plex shrink-0 text-cyan-300 bg-black/40">

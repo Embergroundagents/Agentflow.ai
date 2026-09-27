@@ -18,7 +18,7 @@ export default function Architecture() {
       <PageHeader
         eyebrow="How it works"
         title="Runtime architecture"
-        subtitle="MemoryOS sits between your AI agents and the enterprise systems they touch. Every action is authenticated, evaluated, and logged before it reaches production data."
+        subtitle="RuntimeOS sits between your AI agents and the enterprise systems they touch. Every action is authenticated, evaluated, and logged before it reaches production data."
         testid="architecture-header"
       />
 
@@ -44,10 +44,10 @@ export default function Architecture() {
             ))}
           </div>
 
-          {/* Column 2: MemoryOS core */}
+          {/* Column 2: RuntimeOS core */}
           <div className="relative">
             <div className="text-[11px] uppercase tracking-wider text-neutral-500 font-mono-plex mb-3">
-              MemoryOS runtime
+              RuntimeOS runtime
             </div>
             <div className="surface rounded-xl p-6 border border-cyan-500/30 bg-gradient-to-b from-cyan-500/[0.03] to-transparent h-[calc(100%-1.5rem)]">
               <div className="flex items-center gap-3 mb-5">
@@ -155,8 +155,8 @@ export default function Architecture() {
         <div className="text-[11px] uppercase tracking-wider text-neutral-500 font-mono-plex">
           Deployment
         </div>
-        <div className="font-display text-xl mt-1 mb-4">Where MemoryOS runs</div>
-        <div className="text-neutral-400 text-sm max-w-2xl leading-relaxed mb-5">Persistent agent memory is handled by <span className="text-cyan-300">Breeth</span>; governance decisions, policy state, tenant boundaries and audit history remain in MemoryOS.</div>
+        <div className="font-display text-xl mt-1 mb-4">Where RuntimeOS runs</div>
+        <div className="text-neutral-400 text-sm max-w-2xl leading-relaxed mb-5">Persistent agent memory is handled by <span className="text-cyan-300">Breeth</span>; governance decisions, policy state, tenant boundaries and audit history remain in RuntimeOS.</div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
           {[
             ["Managed cloud",   "Fastest path. Multi-region, SOC 2 Type II, 99.95% SLA. HTTPS + mTLS between your agents and the runtime."],

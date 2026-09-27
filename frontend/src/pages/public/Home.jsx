@@ -102,7 +102,7 @@ export default function Home() {
             <p className="text-neutral-400 text-lg mt-6 leading-relaxed max-w-[560px]">
               Autonomous agents can read data, call APIs, modify records, deploy code, and move money.
               Traditional IAM was built around human identities — not agents making decisions at runtime.
-              MemoryOS sits between the agent and the action, evaluates identity, policy, purpose, and risk,
+              RuntimeOS sits between the agent and the action, evaluates identity, policy, purpose, and risk,
               then returns one enforceable effect: ALLOW, BLOCK, MODIFY, or ESCALATE.
             </p>
             <div className="mt-10 flex flex-wrap items-center gap-3">
@@ -174,7 +174,7 @@ export default function Home() {
               </h2>
               <p className="text-neutral-400 mt-4 text-base leading-relaxed max-w-3xl">
                 An agent can be authenticated and still be allowed to do the wrong thing.
-                MemoryOS evaluates the action <span className="text-neutral-200">before execution</span>,
+                RuntimeOS evaluates the action <span className="text-neutral-200">before execution</span>,
                 preserves the decision trace, and can hand risky actions to a human or an automated workflow.
               </p>
             </div>
@@ -210,7 +210,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Why MemoryOS */}
+      {/* Why RuntimeOS */}
       <section className="max-w-[1400px] mx-auto px-6 py-20">
         <div className="max-w-3xl mb-14">
           <div className="text-[11px] tracking-[0.2em] uppercase text-neutral-500 font-mono-plex mb-3">
@@ -276,8 +276,8 @@ export default function Home() {
               One layer between agents and everything you care about.
             </h2>
             <p className="text-neutral-400 mt-4 text-lg leading-relaxed">
-              Drop MemoryOS in front of Postgres, MongoDB, SurrealDB, Redis, Pinecone,
-              Qdrant, or any REST API. Point your agents at MemoryOS instead. Zero
+              Drop RuntimeOS in front of Postgres, MongoDB, SurrealDB, Redis, Pinecone,
+              Qdrant, or any REST API. Point your agents at RuntimeOS instead. Zero
               rewrites, immediate governance.
             </p>
             <div className="mt-6 space-y-3">
@@ -316,7 +316,7 @@ export default function Home() {
                 <div className="surface rounded-xl p-4 border border-cyan-500/30 bg-gradient-to-b from-cyan-500/[0.05] to-transparent">
                   <div className="flex items-center gap-2 mb-3">
                     <Shield size={14} className="text-cyan-300" />
-                    <div className="font-display text-[13px]">MemoryOS</div>
+                    <div className="font-display text-[13px]">RuntimeOS</div>
                   </div>
                   {["identity", "context", "risk", "policy", "effect", "audit"].map((s) => (
                     <div key={s} className="text-[11px] font-mono-plex text-neutral-400 py-0.5">
@@ -346,7 +346,7 @@ export default function Home() {
           </div>
           <p className="font-display text-2xl md:text-3xl leading-snug tracking-tight text-neutral-100">
             "We had five copilots in production and no way to say <span className="text-cyan-300">
-              who did what to which customer record</span>. MemoryOS gave us that answer
+              who did what to which customer record</span>. RuntimeOS gave us that answer
             in the first 48 hours."
           </p>
           <div className="mt-8 text-neutral-500 text-sm">

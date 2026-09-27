@@ -214,7 +214,7 @@ export default function Docs() {
               Deploy where your agents already run.
             </h2>
             <p className="text-neutral-400 mt-3 max-w-2xl">
-              MemoryOS is a single stateless FastAPI service backed by MongoDB. Ship it on
+              RuntimeOS is a single stateless FastAPI service backed by MongoDB. Ship it on
               Kubernetes, ECS/Fargate, Container Apps, or Cloud Run — same image, same config.
             </p>
             <div className="mt-6 flex flex-wrap items-center gap-2">
@@ -267,9 +267,9 @@ async with AsyncClient(api_key="mg_...") as mg:
           {/* TypeScript SDK */}
           <div id="typescript">
             <h2 className="font-display text-3xl tracking-tight">TypeScript SDK</h2>
-            <CodeBlock onCopy={copy} code={`import { MemoryOS } from "memoryos-sdk";
+            <CodeBlock onCopy={copy} code={`import { RuntimeOS } from "memoryos-sdk";
 
-const mg = new MemoryOS({ apiKey: process.env.MG_KEY! });
+const mg = new RuntimeOS({ apiKey: process.env.MG_KEY! });
 
 const d = await mg.evaluate({
   agentId: "agent_crm_copilot",

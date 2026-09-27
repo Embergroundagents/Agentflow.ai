@@ -74,7 +74,7 @@ const FAQ = [
   ["Where is my data stored?",
    "By default: eu-west-1 or us-east-2 (you choose during onboarding) on SOC 2 Type II infrastructure. Enterprise: your own VPC, air-gapped install, or on-prem k8s — request bodies never leave your network."],
   ["Do you train on our data?",
-   "No. MemoryOS stores decisions for audit only. There is no model training, no cross-tenant analytics, and no third-party sharing. All decisions are tenant-scoped from insert to export."],
+   "No. RuntimeOS stores decisions for audit only. There is no model training, no cross-tenant analytics, and no third-party sharing. All decisions are tenant-scoped from insert to export."],
   ["How does the SDK version rollout work?",
    "Semantic versioning. `memorygate>=0.1,<1` is the pinned production line — no breaking changes without a major bump. Middleware modules opt-in via extras (e.g. `pip install memorygate[langgraph]`)."],
   ["Can we start self-hosted?",
@@ -116,7 +116,7 @@ export default function Pricing() {
   };
 
   // Simple ROI model:
-  // - MemoryOS cost: Growth $1499/mo, Enterprise ~ negotiated but assume $8k/mo for calc
+  // - RuntimeOS cost: Growth $1499/mo, Enterprise ~ negotiated but assume $8k/mo for calc
   // - Value delivered: prevented incidents (1 per agent per year at $60k blast) + engineer hours saved
   //   (30 hrs/mo per team on manual audit prep) + faster ship velocity (2 wks/quarter unblocked)
   const roi = useMemo(() => {
@@ -283,7 +283,7 @@ export default function Pricing() {
               <Calculator size={12} className="text-cyan-300" /> ROI calculator
             </div>
             <h2 className="font-display text-3xl tracking-tight">
-              What MemoryOS is worth to your team.
+              What RuntimeOS is worth to your team.
             </h2>
             <p className="text-neutral-400 mt-3 max-w-md">
               A conservative model based on prevented incidents, audit hours reclaimed, and

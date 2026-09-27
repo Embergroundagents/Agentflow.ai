@@ -33,7 +33,7 @@ export default function Memory() {
         <div>
           <div className="text-[10px] uppercase tracking-[0.18em] text-cyan-300 font-mono-plex">memory plane</div>
           <h1 className="font-display text-3xl mt-1">Breeth Memory</h1>
-          <p className="text-neutral-400 text-sm mt-2 max-w-2xl">Persistent, intent-aware agent memory behind the MemoryOS governance boundary. Tenant scope is mapped to the Breeth group.</p>
+          <p className="text-neutral-400 text-sm mt-2 max-w-2xl">Persistent, intent-aware agent memory behind the RuntimeOS governance boundary. Tenant scope is mapped to the Breeth group.</p>
         </div>
         <div className="surface rounded-lg px-3 py-2 text-xs text-neutral-400 flex items-center gap-2"><Brain size={14} className="text-cyan-300"/> Breeth</div>
       </div>

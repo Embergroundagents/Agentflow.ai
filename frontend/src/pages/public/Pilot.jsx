@@ -59,7 +59,7 @@ export default function Pilot() {
           <h1 className="font-display text-4xl tracking-tight">
             {tier === "growth"
               ? "Get your first governed decision in one day."
-              : "Book a pilot with the MemoryOS team."}
+              : "Book a pilot with the RuntimeOS team."}
           </h1>
           <p className="text-neutral-400 mt-4 leading-relaxed">
             {tier === "growth"
@@ -177,7 +177,7 @@ export default function Pilot() {
             {busy ? "Sending…" : (<>Book pilot <Send size={13} /></>)}
           </button>
           <div className="text-[11px] text-neutral-500 mt-3 text-center">
-            We reply within 1 business day. Your info stays with the MemoryOS team; no
+            We reply within 1 business day. Your info stays with the RuntimeOS team; no
             third-party sharing.
           </div>
         </form>

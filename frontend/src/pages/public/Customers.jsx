@@ -8,13 +8,13 @@ const CASE_STUDIES = [
     logo: "Halcyon Labs",
     headline: "Turned 5 rogue copilots into an auditable AI platform.",
     problem: "Five production copilots reading customer records with no per-request audit trail. SOC 2 auditors flagged it. The team had 90 days to answer 'who did what to which record?'",
-    solution: "MemoryOS deployed in-VPC in front of PostgreSQL and their internal API gateway. 14 starter policies redacted PII on customer reads and blocked exports over 10k rows.",
+    solution: "RuntimeOS deployed in-VPC in front of PostgreSQL and their internal API gateway. 14 starter policies redacted PII on customer reads and blocked exports over 10k rows.",
     outcome: [
       ["24 h",    "to first governed decision"],
       ["100%",    "of copilot traffic evaluated"],
       ["$0",      "in emergency remediation vs. projected $180k"],
     ],
-    quote: "MemoryOS gave us the answer to 'who read what' in 48 hours — the audit finding was closed the same quarter.",
+    quote: "RuntimeOS gave us the answer to 'who read what' in 48 hours — the audit finding was closed the same quarter.",
     author: "Head of Platform Security",
   },
   {
@@ -36,13 +36,13 @@ const CASE_STUDIES = [
     logo: "Blackpine Health",
     headline: "Deployed a clinical intake agent without touching PHI.",
     problem: "A clinical intake agent needed to summarize charts, but PHI could never leave the LLM prompt in raw form. Compliance blocked go-live twice.",
-    solution: "`modify` policies stripped 14 categories of PHI before the LLM saw the payload; MemoryOS ran air-gapped in the hospital's VPC. Full BAA in place.",
+    solution: "`modify` policies stripped 14 categories of PHI before the LLM saw the payload; RuntimeOS ran air-gapped in the hospital's VPC. Full BAA in place.",
     outcome: [
       ["14",     "PHI categories redacted at runtime"],
       ["Air-gap","zero outbound network from the runtime"],
       ["Go-live","cleared by compliance in one review"],
     ],
-    quote: "MemoryOS is the only reason our clinical AI ever saw a patient chart. Everything else assumed the LLM was trustworthy.",
+    quote: "RuntimeOS is the only reason our clinical AI ever saw a patient chart. Everything else assumed the LLM was trustworthy.",
     author: "CISO",
   },
 ];
@@ -66,7 +66,7 @@ export default function Customers() {
           customers
         </div>
         <h1 className="font-display text-5xl tracking-tight">
-          What teams are actually doing with MemoryOS.
+          What teams are actually doing with RuntimeOS.
         </h1>
         <p className="text-neutral-400 text-lg mt-4 max-w-3xl">
           Case studies from design partners in SaaS, FinTech, and Healthcare. Every metric
@@ -119,7 +119,7 @@ export default function Customers() {
             use cases
           </div>
           <h2 className="font-display text-3xl tracking-tight">
-            If your agents touch data or take actions — MemoryOS has a template.
+            If your agents touch data or take actions — RuntimeOS has a template.
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 mt-10">
             {USE_CASES.map(([t, d]) => (
