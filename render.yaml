@@ -1,0 +1,52 @@
+services:
+  - type: web
+    name: memoryos-api
+    runtime: python
+    rootDir: backend
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn server:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /api/
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.9
+      - key: DB_NAME
+        value: memoryos
+      - key: JWT_SECRET
+        generateValue: true
+      - key: ADMIN_EMAIL
+        sync: false
+      - key: ADMIN_PASSWORD
+        sync: false
+      - key: ADMIN_ORG_NAME
+        value: MemoryOS Cloud
+      - key: ENVIRONMENT
+        value: production
+      - key: ALLOWED_ORIGINS
+        value: https://memoryos-web.onrender.com
+      - key: N8N_WEBHOOK_URL
+        sync: false
+      - key: DODO_PAYMENTS_API_KEY
+        sync: false
+      - key: DODO_PAYMENTS_ENVIRONMENT
+        value: live_mode
+      - key: DODO_GROWTH_MONTHLY_PRODUCT_ID
+        sync: false
+      - key: DODO_GROWTH_ANNUAL_PRODUCT_ID
+        sync: false
+      - key: DODO_PAYMENTS_WEBHOOK_KEY
+        sync: false
+      - key: BREETH_API_KEY
+        sync: false
+      - key: BREETH_BASE_URL
+        value: https://api.thebreeth.com/v1
+
+  - type: web
+    name: memoryos-web
+    runtime: static
+    rootDir: frontend
+    buildCommand: yarn install --frozen-lockfile && yarn build
+    staticPublishPath: build
+    envVars:
+      - key: REACT_APP_BACKEND_URL
+        value: https://memoryos-api.onrender.com

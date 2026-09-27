@@ -1,0 +1,122 @@
+{
+  "name": "MemoryOS — Agent Decision Router",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "memoryos-decision",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "memoryos-webhook",
+      "name": "MemoryOS Decision Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [240, 300],
+      "webhookId": "memoryos-decision"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {"caseSensitive": false, "leftValue": "", "typeValidation": "strict", "version": 2},
+                "conditions": [{"leftValue": "={{ $json.decision }}", "rightValue": "block", "operator": {"type": "string", "operation": "equals"}}],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "BLOCK"
+            },
+            {
+              "conditions": {
+                "options": {"caseSensitive": false, "leftValue": "", "typeValidation": "strict", "version": 2},
+                "conditions": [{"leftValue": "={{ $json.decision }}", "rightValue": "escalate", "operator": {"type": "string", "operation": "equals"}}],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "ESCALATE"
+            },
+            {
+              "conditions": {
+                "options": {"caseSensitive": false, "leftValue": "", "typeValidation": "strict", "version": 2},
+                "conditions": [{"leftValue": "={{ $json.decision }}", "rightValue": "modify", "operator": {"type": "string", "operation": "equals"}}],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "MODIFY"
+            }
+          ]
+        },
+        "options": {"fallbackOutput": "extra"}
+      },
+      "id": "decision-router",
+      "name": "Route by Governance Effect",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [520, 300]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={\"status\":\"blocked\",\"next_action\":\"alert_security\",\"decision_id\":$json.decision_id}",
+        "options": {}
+      },
+      "id": "respond-block",
+      "name": "BLOCK → Security Alert",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.4,
+      "position": [820, 120]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={\"status\":\"escalated\",\"next_action\":\"human_review\",\"decision_id\":$json.decision_id}",
+        "options": {}
+      },
+      "id": "respond-escalate",
+      "name": "ESCALATE → Human Review",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.4,
+      "position": [820, 260]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={\"status\":\"modified\",\"next_action\":\"continue_with_safe_payload\",\"decision_id\":$json.decision_id}",
+        "options": {}
+      },
+      "id": "respond-modify",
+      "name": "MODIFY → Continue Safely",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.4,
+      "position": [820, 400]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={\"status\":\"allowed\",\"next_action\":\"continue\",\"decision_id\":$json.decision_id}",
+        "options": {}
+      },
+      "id": "respond-allow",
+      "name": "ALLOW → Continue",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.4,
+      "position": [820, 540]
+    }
+  ],
+  "connections": {
+    "MemoryOS Decision Webhook": {"main": [[{"node": "Route by Governance Effect", "type": "main", "index": 0}]]},
+    "Route by Governance Effect": {"main": [
+      [{"node": "BLOCK → Security Alert", "type": "main", "index": 0}],
+      [{"node": "ESCALATE → Human Review", "type": "main", "index": 0}],
+      [{"node": "MODIFY → Continue Safely", "type": "main", "index": 0}],
+      [{"node": "ALLOW → Continue", "type": "main", "index": 0}]
+    ]}
+  },
+  "active": false,
+  "settings": {"executionOrder": "v1"},
+  "versionId": "memoryos-emberground-2026",
+  "meta": {"templateCredsSetupCompleted": true},
+  "tags": []
+}
