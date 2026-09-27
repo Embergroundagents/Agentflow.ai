@@ -46,7 +46,7 @@ export function PublicHeader() {
         </nav>
         <div className="flex items-center gap-2 ml-auto">
           <a
-            href="https://github.com/c0ntr1butr/MemoryOS"
+            href="https://github.com/Embergroundagents/Agentflow.ai"
             target="_blank"
             rel="noreferrer"
             className="btn-secondary text-sm hidden sm:flex items-center gap-2"
@@ -87,7 +87,7 @@ const COL_RESOURCES = [
   ["API reference", "/api/docs"],
   ["Python SDK", "/docs#python"],
   ["TypeScript SDK", "/docs#typescript"],
-  ["Changelog", "https://github.com/c0ntr1butr/MemoryOS/releases"],
+  ["Changelog", "https://github.com/Embergroundagents/Agentflow.ai/releases"],
 ];
 
 const COL_COMPANY = [
@@ -317,7 +317,7 @@ export function PublicFooter() {
               GitHub
             </div>
             <a
-              href="https://github.com/c0ntr1butr/MemoryOS"
+              href="https://github.com/Embergroundagents/Agentflow.ai"
               target="_blank"
               rel="noreferrer"
               data-testid="footer-social-github"
@@ -350,7 +350,7 @@ export function PublicFooter() {
             </a>
             <span>·</span>
             <a
-              href="https://github.com/c0ntr1butr/MemoryOS"
+              href="https://github.com/Embergroundagents/Agentflow.ai"
               target="_blank"
               rel="noreferrer"
               className="hover:text-cyan-300 transition-colors inline-flex items-center gap-1"
